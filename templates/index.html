@@ -15,18 +15,18 @@
     <div class="container mt-5">
         <div class="mb-3 justify-content-center align-items-center">
             <label for="url" class="form-label">Input Link to Scrape</label>
-            <input type="text" class="form-control" id="url" name="url">
+            {{ form.url(class="form-control", id="url") }}
             <div id="urlHelp" class="form-text">Please include https:// or http://</div>
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </div>
     {% if form.url.errors %}
     <ul class="errors">
-    {% for error in form.url.errors %}
+        {% for error in form.url.errors %}
         <li>{{ error }}</li>
-    {% endfor %}
+        {% endfor %}
     </ul>
-{% endif %}
+    {% endif %}
 </form>
 {% if links %}
 <ul>
